@@ -1,15 +1,20 @@
 #pragma once
 #include "stdafx.h"
-#include <string>
 #include "Location.h"
-using namespace std;
+
 class Event
 {
+private:
+	string event_name;
+	Location location;
+	DateAndTime dt;
+
 public:
 	Event();
+	Event(string, Location, DateAndTime);
+	Event(string, string, int, int);
 	~Event();
-private:
-	string name;
-	Location location;
+	string get_event_name();
+	void set_event_name(string);
 };
 
