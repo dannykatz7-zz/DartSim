@@ -4,7 +4,7 @@
 
 Sports_Complex::Sports_Complex(string name1, string sport1, Event evnt)
 {
-	change_name(name1);
+	set_name(name1);
 	sport = sport1;
 	event = evnt;
 }
