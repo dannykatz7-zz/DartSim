@@ -12,6 +12,7 @@
 using namespace std;
 #include <tchar.h>
 
+#include "DateAndTime.h"
 #include "Event.h"
 #include "Location.h"
 #include "Organization.h"

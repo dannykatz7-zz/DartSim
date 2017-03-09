@@ -145,6 +145,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DateAndTime.h" />
     <ClInclude Include="Event.h" />
     <ClInclude Include="Location.h" />
     <ClInclude Include="Organization.h" />
@@ -158,6 +159,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DartSim.cpp" />
+    <ClCompile Include="DateAndTime.cpp" />
     <ClCompile Include="Event.cpp" />
     <ClCompile Include="Location.cpp" />
     <ClCompile Include="Organization.cpp" />
