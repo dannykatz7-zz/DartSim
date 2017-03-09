@@ -28,7 +28,7 @@ void MasterClock::tickHours(int hours)
 	int numDays = hours / 24;
 	int numHours = hours % 24;
 	day += numDays;
-	hour = +numHours;
+	hour += numHours;
 	if (hour > 23)
 	{
 		hour -= 24;
@@ -40,4 +40,14 @@ void MasterClock::nextDay()
 {
 	day++;
 	hour = 9;
+}
+
+int MasterClock::getHour()
+{
+	return hour;
+}
+
+int MasterClock::getDay()
+{
+	return day;
 }
