@@ -151,6 +151,7 @@
     <ClInclude Include="Person.h" />
     <ClInclude Include="Professor.h" />
     <ClInclude Include="Schedule.h" />
+    <ClInclude Include="Sports_Complex.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="targetver.h" />
@@ -163,6 +164,7 @@
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="Professor.cpp" />
     <ClCompile Include="Schedule.cpp" />
+    <ClCompile Include="Sports_Complex.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
