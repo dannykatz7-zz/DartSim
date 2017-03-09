@@ -10,6 +10,12 @@
 #include <stdio.h>
 #include <tchar.h>
 
+#include "Schedule.h"
+#include "Organization.h"
+#include "Event.h"
+#include "Person.h"
+#include "Student.h"
+
 
 
 // TODO: reference additional headers your program requires here

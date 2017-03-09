@@ -4,7 +4,10 @@
 #include <iostream>
 using namespace std;
 
+Person::Person()
+{
 
+}
 Person::Person(string *fullName, string *mGender, int bYear, int bMonth, int bDate)
 {
 	name = fullName;
