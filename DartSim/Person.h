@@ -7,7 +7,7 @@ class Person
 public:
 	Person(string *fullName, string *mGender, int bYear, int bMonth, int bDate);
 	string getName();
-	string getBirthday(); //returns formatted Birthday ie 08/29/1993 (my birthday)
+	string getBirthday(); //returns formatted Birthday ie 07/12/1995 (my birthday)
 	~Person();
 private:
 	string *name;
