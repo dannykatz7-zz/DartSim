@@ -39,15 +39,6 @@
     <ClInclude Include="Organization.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="location.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Professor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Sports_Complex.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -69,15 +60,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Organization.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="location.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Professor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Sports_Complex.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
