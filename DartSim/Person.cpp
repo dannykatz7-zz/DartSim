@@ -8,6 +8,7 @@ Person::Person()
 {
 
 }
+
 Person::Person(string *fullName, string *mGender, int bYear, int bMonth, int bDate)
 {
 	name = fullName;
@@ -17,9 +18,9 @@ Person::Person(string *fullName, string *mGender, int bYear, int bMonth, int bDa
 	birthYear = bYear;
 }
 
-
-Person::~Person()
+void Person::onClock();
 {
+
 }
 
 string Person::getBirthday()
@@ -35,4 +36,6 @@ string Person::getName()
 	return n;
 }
 
-
+Person::~Person()
+{
+}

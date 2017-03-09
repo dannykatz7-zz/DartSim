@@ -9,6 +9,7 @@ public:
 	Person(string *fullName, string *mGender, int bYear, int bMonth, int bDate);
 	string getName();
 	string getBirthday(); //returns formatted Birthday ie 07/12/1995 (my birthday)
+	void onClock();
 	~Person();
 private:
 	string *name;
