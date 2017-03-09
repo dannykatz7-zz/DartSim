@@ -146,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Event.h" />
+    <ClInclude Include="location.h" />
     <ClInclude Include="Organization.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="Schedule.h" />
@@ -156,6 +157,7 @@
   <ItemGroup>
     <ClCompile Include="DartSim.cpp" />
     <ClCompile Include="Event.cpp" />
+    <ClCompile Include="location.cpp" />
     <ClCompile Include="Organization.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="Schedule.cpp" />
