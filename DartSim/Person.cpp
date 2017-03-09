@@ -18,7 +18,7 @@ Person::Person(string *fullName, string *mGender, int bYear, int bMonth, int bDa
 	birthYear = bYear;
 }
 
-void Person::onClock();
+void Person::onClock()
 {
 
 }

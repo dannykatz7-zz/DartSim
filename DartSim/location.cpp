@@ -1,13 +1,13 @@
 #include "stdafx.h"
-#include "location.h"
+#include "Location.h"
 
 
-location::location(const string word)
+location::location()
 {
 	name = word;
 }
     
 
-location::~location()
+Location::~Location()
 {
 }
