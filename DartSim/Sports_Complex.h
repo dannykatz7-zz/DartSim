@@ -2,7 +2,7 @@
 #include "stdafx.h"
 
 class Sports_Complex :
-	public location
+	public Location
 {
 private:
 	string sport;
@@ -11,5 +11,7 @@ private:
 public:
 	Sports_Complex(string, string, Event);
 	~Sports_Complex();
+	string get_sport();
+	void set_sport(string);
 };
 

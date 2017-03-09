@@ -2,7 +2,12 @@
 #include "Location.h"
 
 
-location::location()
+Location::Location()
+{
+	name;
+}
+
+Location::Location(string word)
 {
 	name = word;
 }
@@ -10,4 +15,12 @@ location::location()
 
 Location::~Location()
 {
+}
+
+void Location::set_name(string word) {
+	name = word;
+}
+
+string Location::get_name() {
+	return name;
 }
