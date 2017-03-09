@@ -8,6 +8,8 @@
 #include "targetver.h"
 
 #include <stdio.h>
+#include <string.h>
+using namespace std;
 #include <tchar.h>
 
 #include "Schedule.h"

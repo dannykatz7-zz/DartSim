@@ -39,7 +39,7 @@
     <ClInclude Include="Organization.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="location.h">
+    <ClInclude Include="Professor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -65,7 +65,7 @@
     <ClCompile Include="Organization.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="location.cpp">
+    <ClCompile Include="Professor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
