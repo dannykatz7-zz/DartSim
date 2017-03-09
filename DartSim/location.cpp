@@ -1,12 +1,12 @@
 #include "stdafx.h"
-#include "location.h"
+#include "Location.h"
 
 
-location::location()
+Location::Location()
 {
 }
 
 
-location::~location()
+Location::~Location()
 {
 }

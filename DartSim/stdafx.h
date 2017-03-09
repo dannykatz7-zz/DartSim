@@ -12,10 +12,13 @@
 using namespace std;
 #include <tchar.h>
 
-#include "Schedule.h"
-#include "Organization.h"
 #include "Event.h"
+#include "Location.h"
+#include "Organization.h"
 #include "Person.h"
+#include "Professor.h"
+#include "Schedule.h"
+#include "Sports_Complex.h"
 #include "Student.h"
 
 

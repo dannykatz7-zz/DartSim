@@ -1,8 +1,10 @@
 #pragma once
-class location
+class Location
 {
 public:
-	location();
-	~location();
+	Location();
+	~Location();
+private:
+	string name;
 };
 
