@@ -2,10 +2,11 @@
 #include "location.h"
 
 
-location::location()
+location::location(const string word)
 {
+	name = word;
 }
-
+    
 
 location::~location()
 {

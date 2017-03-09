@@ -1,8 +1,14 @@
 #pragma once
+#include "stdafx.h"
+
 class location
 {
+private:
+	string name;
+
 public:
-	location();
+	string get_name();
+	location(string);
 	~location();
 };
 
