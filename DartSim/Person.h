@@ -16,5 +16,6 @@ private:
 	int birthYear;
 	int birthMonth; //NOT zero indexed, i.e. 1 = January
 	int birthDate; //also NOT zero indexed
+	Schedule schedule;
 };
 
