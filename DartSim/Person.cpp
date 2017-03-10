@@ -18,9 +18,13 @@ Person::Person(string *fullName, string *mGender, int bYear, int bMonth, int bDa
 	birthYear = bYear;
 }
 
+Event* Person::getEvents()
+{
+	return events;
+}
 void Person::onClock()
 {
-
+	
 }
 
 string Person::getBirthday()

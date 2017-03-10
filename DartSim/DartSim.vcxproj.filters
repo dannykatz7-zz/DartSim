@@ -33,9 +33,6 @@
     <ClInclude Include="Student.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Schedule.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Organization.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -69,9 +66,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Student.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Schedule.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Organization.cpp">

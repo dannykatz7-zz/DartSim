@@ -11,6 +11,7 @@ public:
 	Person(string *fullName, string *mGender, int bYear, int bMonth, int bDate);
 	string getName();
 	string getBirthday(); //returns formatted Birthday ie 07/12/1995 (my birthday)
+	Event* getEvents();
 	void onClock();
 	~Person();
 private:
@@ -19,6 +20,6 @@ private:
 	int birthYear;
 	int birthMonth; //NOT zero indexed, i.e. 1 = January
 	int birthDate; //also NOT zero indexed
-	Schedule schedule;
+	Event *events;
 };
 

@@ -19,7 +19,6 @@ using namespace std;
 #include "Organization.h"
 #include "Person.h"
 #include "Professor.h"
-#include "Schedule.h"
 #include "Sports_Complex.h"
 #include "Student.h"
 #include "location.h"
