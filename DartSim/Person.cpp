@@ -54,6 +54,7 @@ void Person::onClock(MasterClock clock)
 			if (it->get_hour() == clock.getHour()) {
 				/*TODO: Whatever the hell you wanted to do here 
 				to access the member the iterator is referring to see above (*it) */
+				//location = it->
 			}
 		}
 	}
