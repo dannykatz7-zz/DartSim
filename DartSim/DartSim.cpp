@@ -10,6 +10,9 @@ using namespace std;
 int main()
 {
 	MasterClock clock;
+	Person dan;
+	//dan.setInfo("Danny Katz", 1993, 8, 29); //Can't figure this part out
+
 	bool running = true;
 
 	while (running) {

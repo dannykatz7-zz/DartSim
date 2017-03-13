@@ -22,9 +22,21 @@ Event* Person::getEvents()
 {
 	return events;
 }
+
+void Person::setInfo(string *fullName, int bYear, int bMonth, int bDate)
+{
+	name = fullName;
+	birthYear = bYear;
+	birthMonth = bMonth;
+	birthYear = bYear;
+}
+
 void Person::onClock()
 {
-	
+	for(int i = 0; i < sizeof(events); i++)
+	{
+		cout << sizeof(events) << endl;
+	}
 }
 
 string Person::getBirthday()
