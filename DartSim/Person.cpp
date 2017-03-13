@@ -16,6 +16,8 @@ Person::Person(string *fullName, string *mGender, int bYear, int bMonth, int bDa
 	birthYear = bYear;
 	birthMonth = bMonth;
 	birthYear = bYear;
+	string home = "home";
+	//location = home.c_str(); //need to set location here
 }
 
 Event* Person::getEvents()
@@ -39,6 +41,11 @@ void Person::onClock(MasterClock clock)
 		//if current day == event day
 		//if current hour == event hour
 		//go to event
+		if (e.get_day() == clock.getDay()) {
+			if (e.get_hour() == clock.getHour()) {
+
+			}
+		}
 	}
 }
 

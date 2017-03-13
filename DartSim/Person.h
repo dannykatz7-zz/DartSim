@@ -13,6 +13,7 @@ public:
 	Event* getEvents();
 	void setInfo(string *fullName, int year, int month, int day);
 	void onClock(MasterClock clock);
+	string* getLocation();
 	~Person();
 private:
 	string *name;
@@ -21,5 +22,6 @@ private:
 	int birthMonth; //NOT zero indexed, i.e. 1 = January
 	int birthDate; //also NOT zero indexed
 	Event *events;
+	string *location;
 };
 

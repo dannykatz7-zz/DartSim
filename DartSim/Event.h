@@ -17,5 +17,7 @@ public:
 	string get_event_name();
 	void set_event_name(string);
 	DateAndTime get_event_time();
+	int get_day();
+	int get_hour();
 };
 

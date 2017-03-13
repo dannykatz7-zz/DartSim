@@ -38,3 +38,11 @@ void Event::set_event_name(string ev_name) {
 DateAndTime Event::get_event_time() {
 	return dt;
 }
+
+int Event::get_day() {
+	return dt.getDay();
+}
+
+int Event::get_hour() {
+	return dt.getHour();
+}
