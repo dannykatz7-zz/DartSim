@@ -6,7 +6,7 @@ using namespace std;
 class Person
 {
 public:
-	Person(); //TODO: Create some default constructor
+	Person(); 
 	Person(string fullName, string mGender, int bYear, int bMonth, int bDate);
 	string getName();
 	string getBirthday() const; //returns formatted Birthday ie 07/12/1995 (my birthday)
