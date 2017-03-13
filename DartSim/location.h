@@ -8,7 +8,7 @@ public:
 	Location(string);
 	~Location();
 	void set_name(string);
-	string get_name();
+	string get_name() const;
 
 private:
 	string name;

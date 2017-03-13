@@ -21,6 +21,6 @@ void Location::set_name(string word) {
 	name = word;
 }
 
-string Location::get_name() {
+string Location::get_name() const{
 	return name;
 }

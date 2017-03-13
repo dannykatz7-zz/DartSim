@@ -46,8 +46,8 @@ void Person::onClock(MasterClock clock)
 		//if current day == event day
 		//if current hour == event hour
 		//go to event
-		if ((*it).get_day == clock.getDay()) {
-			if ((*it).get_hour() == clock.getHour()) {
+		if (it->get_day() == clock.getDay()) {
+			if (it->get_hour() == clock.getHour()) {
 				/*TODO: Whatever the hell you wanted to do here 
 				to access the member the iterator is referring to see above (*it) */
 			}
@@ -55,9 +55,9 @@ void Person::onClock(MasterClock clock)
 	}
 }
 
-string Person::getBirthday()
+string Person::getBirthday() const
 {
-	string bDay = to_string(birthMonth) + "/" + to_string(birthDate) + "/" + to_string(birthYear);
+	const string bDay = to_string(birthMonth) + "/" + to_string(birthDate) + "/" + to_string(birthYear);
 	return bDay;
 }
 
@@ -65,6 +65,18 @@ string Person::getName()
 {
 	/*cout << name << endl;*/   // Not a fan of printing within this method, overload the << operator
 	return name;
+}
+
+ostream& operator<<(std::ostream& os, Person pers) {
+	os << "Name: " << pers.name << endl;
+	os << "Gender: " << pers.gender << endl;
+	os << "Birthdate: " << pers.getBirthday() << endl;
+	os << "Events: ";
+	for (vector<Event>::iterator it = pers.events.begin(); it != pers.events.end(); ++it) {
+		os << (*it);
+	}
+	os << "Current location: " << pers.location << endl; 
+	return os;
 }
 
 Person::~Person()

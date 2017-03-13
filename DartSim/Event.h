@@ -14,10 +14,11 @@ public:
 	Event(string, Location, DateAndTime);
 	Event(string, string, int, int);
 	~Event();
-	string get_event_name();
+	string get_event_name() const;
 	void set_event_name(string);
-	DateAndTime get_event_time();
-	int get_day();
-	int get_hour();
+	DateAndTime get_event_time() const;
+	int get_day() const;
+	int get_hour() const;
+	friend ostream& operator<<(std::ostream& os, const Event);
 };
 

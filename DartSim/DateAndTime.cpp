@@ -11,7 +11,7 @@ DateAndTime::~DateAndTime()
 {
 }
 
-int DateAndTime::getDay()
+int DateAndTime::getDay() const
 {
 	return day;
 }
@@ -20,7 +20,7 @@ void DateAndTime::setDay(int day1) {
 	day = day1;
 }
 
-int DateAndTime::getHour()
+int DateAndTime::getHour() const
 {
 	return hour;
 }

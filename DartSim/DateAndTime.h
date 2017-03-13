@@ -4,9 +4,9 @@ class DateAndTime
 public:
 	DateAndTime();
 	~DateAndTime();
-	int getDay();
+	int getDay() const;
 	void setDay(int);
-	int getHour();
+	int getHour() const;
 	void setHour(int);
 
 private:

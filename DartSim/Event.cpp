@@ -27,7 +27,7 @@ Event::~Event()
 {
 }
 
-string Event::get_event_name() {
+string Event::get_event_name() const{
 	return event_name;
 }
 
@@ -35,14 +35,20 @@ void Event::set_event_name(string ev_name) {
 	event_name = ev_name;
 }
 
-DateAndTime Event::get_event_time() {
+DateAndTime Event::get_event_time() const{
 	return dt;
 }
 
-int Event::get_day() {
+int Event::get_day() const{
 	return dt.getDay();
 }
 
-int Event::get_hour() {
+int Event::get_hour() const{
 	return dt.getHour();
+}
+
+ostream& operator<<(std::ostream& os, const Event evnt) {
+	os << evnt.event_name << ", " << evnt.location.get_name() << ", " 
+		<< evnt.dt.getDay() << " " << evnt.dt.getHour() << ":00" << endl;
+	return os;
 }
