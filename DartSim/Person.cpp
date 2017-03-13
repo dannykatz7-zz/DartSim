@@ -53,7 +53,7 @@ void Person::onClock(MasterClock clock)
 		//go to event
 		if (it->get_day() == clock.getDay()) {
 			if (it->get_hour() == clock.getHour()) {
-				/*TODO: Whatever the hell you wanted to do here 
+				/*TODO: Whatever the hell you wanted to do here*/
 			}
 		}
 	}
