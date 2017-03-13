@@ -6,7 +6,7 @@ class Student :
 {
 public:
 	Student();
-	Student(string *fullName, string *mGender, int bYear, int bMonth, int bDay);
+	Student(string *fullName, string *mGender, int bYear, int bMonth, int bDay); 
 	~Student();
 private:
 	int classYear;

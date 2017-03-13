@@ -39,6 +39,11 @@ DateAndTime Event::get_event_time() const{
 	return dt;
 }
 
+void Event::set_event_time(DateAndTime d)
+{
+	dt = d;
+}
+
 int Event::get_day() const{
 	return dt.getDay();
 }
@@ -49,6 +54,10 @@ int Event::get_hour() const{
 
 string Event::get_location() const {
 	return location;
+}
+
+void Event::set_event_location(string loc) {
+	location = loc;
 }
 
 ostream& operator<<(std::ostream& os, const Event evnt) {
