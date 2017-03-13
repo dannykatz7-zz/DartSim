@@ -8,7 +8,7 @@ Event::Event()
 	dt;
 }
 
-Event::Event(string name1, Location loc1, DateAndTime dt1)
+Event::Event(string name1, string loc1, DateAndTime dt1)
 {
 	event_name = name1;
 	location = loc1;
@@ -18,7 +18,7 @@ Event::Event(string name1, Location loc1, DateAndTime dt1)
 Event::Event(string ev_name, string loc_name, int day, int hour) 
 {
 	event_name = ev_name;
-	location.set_name(loc_name);
+	location = (loc_name);
 	dt.setDay(day);
 	dt.setHour(hour);
 }
@@ -47,8 +47,12 @@ int Event::get_hour() const{
 	return dt.getHour();
 }
 
+string Event::get_location() const {
+	return location;
+}
+
 ostream& operator<<(std::ostream& os, const Event evnt) {
-	os << evnt.event_name << ", " << evnt.location.get_name() << ", " 
+	os << evnt.event_name << ", " << evnt.location << ", " 
 		<< evnt.dt.getDay() << " " << evnt.dt.getHour() << ":00" << endl;
 	return os;
 }
