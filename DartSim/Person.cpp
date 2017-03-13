@@ -31,12 +31,14 @@ void Person::setInfo(string *fullName, int bYear, int bMonth, int bDate)
 	birthYear = bYear;
 }
 
-void Person::onClock()
+void Person::onClock(MasterClock clock)
 {
 	Event e;
 	//for each event in events
 	{
-		//if(e.get_event_time().getDay() == ) not sure how exactly to implement here yet
+		//if current day == event day
+		//if current hour == event hour
+		//go to event
 	}
 }
 

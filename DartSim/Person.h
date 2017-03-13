@@ -12,7 +12,7 @@ public:
 	string getBirthday(); //returns formatted Birthday ie 07/12/1995 (my birthday)
 	Event* getEvents();
 	void setInfo(string *fullName, int year, int month, int day);
-	void onClock();
+	void onClock(MasterClock clock);
 	~Person();
 private:
 	string *name;
