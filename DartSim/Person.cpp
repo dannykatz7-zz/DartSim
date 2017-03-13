@@ -9,7 +9,7 @@ Person::Person()
 
 }
 
-Person::Person(string *fullName, string *mGender, int bYear, int bMonth, int bDate)
+Person::Person(string fullName, string mGender, int bYear, int bMonth, int bDate)
 {
 	name = fullName;
 	gender = mGender;
@@ -20,30 +20,36 @@ Person::Person(string *fullName, string *mGender, int bYear, int bMonth, int bDa
 	//location = home.c_str(); //need to set location here
 }
 
-Event* Person::getEvents()
-{
-	return events;
+vector<Event>::iterator Person::addEvent(Event evnt) {
+	//Make an iterator for the end of the loop because insert takes an iterator
+	vector<Event>::iterator it = events.end();
+	//Insert the event into the end of the vector
+	events.insert(it, evnt);
+	//return the position 
+	return it;
 }
 
-void Person::setInfo(string *fullName, int bYear, int bMonth, int bDate)
+vector<Event> Person::getEvents()
 {
-	name = fullName;
-	birthYear = bYear;
-	birthMonth = bMonth;
-	birthYear = bYear;
+	//Return event vector
+	return events;
 }
 
 void Person::onClock(MasterClock clock)
 {
-	Event e;
+	//Create an iterator and set to start of vector
+	vector<Event>::iterator it;
+
 	//for each event in events
+	for (it = events.begin(); it != events.end(); ++it)
 	{
 		//if current day == event day
 		//if current hour == event hour
 		//go to event
-		if (e.get_day() == clock.getDay()) {
-			if (e.get_hour() == clock.getHour()) {
-
+		if ((*it).get_day == clock.getDay()) {
+			if ((*it).get_hour() == clock.getHour()) {
+				/*TODO: Whatever the hell you wanted to do here 
+				to access the member the iterator is referring to see above (*it) */
 			}
 		}
 	}
@@ -57,9 +63,8 @@ string Person::getBirthday()
 
 string Person::getName()
 {
-	string n = *Person::name; //TODO: this might return a pointer
-	cout << n << endl;
-	return n;
+	/*cout << name << endl;*/   // Not a fan of printing within this method, overload the << operator
+	return name;
 }
 
 Person::~Person()

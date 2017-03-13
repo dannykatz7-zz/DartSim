@@ -11,6 +11,8 @@
 #include <string>
 using namespace std;
 #include <tchar.h>
+#include <vector>
+#include <iostream>
 
 #include "DateAndTime.h"
 #include "Event.h"
