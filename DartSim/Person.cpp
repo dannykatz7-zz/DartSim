@@ -33,9 +33,10 @@ void Person::setInfo(string *fullName, int bYear, int bMonth, int bDate)
 
 void Person::onClock()
 {
-	for(int i = 0; i < sizeof(events); i++)
+	Event e;
+	//for each event in events
 	{
-		cout << sizeof(events) << endl;
+		//if(e.get_event_time().getDay() == ) not sure how exactly to implement here yet
 	}
 }
 

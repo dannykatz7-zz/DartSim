@@ -11,7 +11,10 @@ int main()
 {
 	MasterClock clock;
 	Person dan;
-	//dan.setInfo("Danny Katz", 1993, 8, 29); //Can't figure this part out
+	//----_Evan take a look here//
+	//dan.setInfo("Danny Katz", 1993, 8, 29); //Can't figure this part out!!!
+	//Constructor with parameters wasn't working so thought to make a setInfo() method, but can't get that
+	//to work either
 
 	bool running = true;
 

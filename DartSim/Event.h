@@ -16,5 +16,6 @@ public:
 	~Event();
 	string get_event_name();
 	void set_event_name(string);
+	DateAndTime get_event_time();
 };
 

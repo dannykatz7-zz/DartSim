@@ -34,3 +34,7 @@ string Event::get_event_name() {
 void Event::set_event_name(string ev_name) {
 	event_name = ev_name;
 }
+
+DateAndTime Event::get_event_time() {
+	return dt;
+}
