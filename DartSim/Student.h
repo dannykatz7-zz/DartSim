@@ -10,6 +10,5 @@ public:
 	~Student();
 private:
 	int classYear;
-	Organization *organizations; //arraylist of affiliations
 };
 

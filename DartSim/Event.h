@@ -1,6 +1,5 @@
 #pragma once
 #include "stdafx.h"
-#include "Location.h"
 
 class Event
 {

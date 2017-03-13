@@ -16,15 +16,10 @@ using namespace std;
 
 #include "DateAndTime.h"
 #include "Event.h"
-#include "Location.h"
 #include "MasterClock.h"
-#include "Organization.h"
 #include "Person.h"
 #include "Professor.h"
-#include "Sports_Complex.h"
 #include "Student.h"
-#include "location.h"
-#include "Sports_Complex.h"
 
 
 
