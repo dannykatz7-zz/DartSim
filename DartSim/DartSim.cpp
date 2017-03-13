@@ -8,10 +8,14 @@ using namespace std;
 
 
 int main()
-{
+{	
 	MasterClock clock;
-	Person dan;
-
+	Person dan("Danny Katz", "Male", 1993, 8, 29);
+	DateAndTime time_engs65;
+	time_engs65.setDay(2);
+	time_engs65.setHour(4);
+	Event engs65("Software Design", "Thayer", time_engs65);
+	dan.addEvent(engs65);
 
 	bool running = true;
 

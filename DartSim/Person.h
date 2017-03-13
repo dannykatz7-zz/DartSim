@@ -20,6 +20,7 @@ public:
 private:
 	string name;
 	string gender;
+	string home;
 	int birthYear;
 	int birthMonth; //NOT zero indexed, i.e. 1 = January
 	int birthDate; //also NOT zero indexed

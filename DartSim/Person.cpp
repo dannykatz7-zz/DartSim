@@ -53,7 +53,8 @@ void Person::onClock(MasterClock clock)
 		//go to event
 		if (it->get_day() == clock.getDay()) {
 			if (it->get_hour() == clock.getHour()) {
-				/*TODO: Whatever the hell you wanted to do here 
+				/*TODO: Whatever the hell you wanted to do here */
+				location = it->get_location();
 			}
 		}
 	}
@@ -63,6 +64,11 @@ string Person::getBirthday() const
 {
 	const string bDay = to_string(birthMonth) + "/" + to_string(birthDate) + "/" + to_string(birthYear);
 	return bDay;
+}
+
+string Person::getLocation()
+{
+	return location;
 }
 
 string Person::getName()
