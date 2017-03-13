@@ -14,7 +14,7 @@ public:
 	vector<Event> getEvents();
 	void onClock(MasterClock clock);
 	string getLocation(); //TODO
-	friend ostream& operator<<(std::ostream& os, const Person); //TODO
+	friend ostream& operator<<(std::ostream& os, const Person); 
 	~Person();
 
 private:

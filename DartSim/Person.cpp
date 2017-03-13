@@ -6,7 +6,11 @@ using namespace std;
 
 Person::Person()
 {
-
+	name = "John Doe";
+	gender = "Unknown";
+	birthYear = 0;
+	birthMonth = 0;
+	birthYear = 0;
 }
 
 Person::Person(string fullName, string mGender, int bYear, int bMonth, int bDate)
