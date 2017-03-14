@@ -47,15 +47,13 @@ void Person::onClock(MasterClock clock)
 	//for each event in events
 	for (it = events.begin(); it != events.end(); ++it)
 	{
-		//if current day == event day
-		//if current hour == event hour
-		//go to event
-		//if (it->get_day() == clock.getDay()) {
-		//	if (it->get_hour() == clock.getHour()) {
-				/*TODO: Whatever the hell you wanted to do here */
-		//		location = it->get_location();
-		//	}
-		//}
+		for (DateAndTime dt : it->get_event_times()) {
+			if (dt.getDay() == clock.getDay()) {
+				if (dt.getHour() == clock.getHour()) {
+					location = it->get_location();
+				}
+			}
+		}
 	}
 }
 
