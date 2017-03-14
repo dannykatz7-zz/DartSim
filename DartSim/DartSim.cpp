@@ -122,24 +122,28 @@ Person parse_names(string istring) {
 
 Event build(string estring, vector<Person>& peeps) {
 	int day_num;
-	vector<string> v,d;
+	vector<string> v;
 	vector<DateAndTime> dts;
 
 	v = ParseStrings(estring);
 
-	day_num = stoi(v[3], nullptr, 10);
+	day_num = stoi(v[1], nullptr, 10);
 	int i = 0;
 	while (day_num > 0) {
-		DateAndTime dt(stoi(v[4+i],nullptr,10),stoi(v[5+i],nullptr,10));
+		DateAndTime dt(stoi(v[2+i],nullptr,10),stoi(v[3+i],nullptr,10));
 		dts.insert(dts.end(), dt);
 		i += 2;
 		--day_num;
 	}
+
+	vector<string>::iterator it = v.begin() + 2 + i;
+	cout << (*it) << endl;
+	vector<string> d(it, v.end());
 	
 	if (v[0] == "e") {
-		Event vent(v[1], v[2], dts);
+		Event vent(d[0], d[1], dts);
 		for (int i = 0; i < peeps.size(); ++i) {
-			for (auto s : v) {
+			for (auto s : d) {
 				if (s == peeps[i].getName()) 
 					peeps[i].addEvent(vent);
 			}
@@ -148,9 +152,9 @@ Event build(string estring, vector<Person>& peeps) {
 		i += 2;
 	}
 	else if (v[0] == "c") {
-		Course crse(v[1], v[2], dts, v[4 + stoi(v[3], nullptr, 10)*2]);
+		Course crse(d[0], d[1], dts, d.back());
 		for (int i = 0; i < peeps.size(); ++i) {
-			for (auto s : v) {
+			for (auto s : d) {
 				if (s == peeps[i].getName() )
 					peeps[i].addEvent(crse);
 			}
@@ -162,6 +166,9 @@ Event build(string estring, vector<Person>& peeps) {
 	}
 	else {
 
+	}
+	for (auto p : peeps) {
+		cout << p << endl;
 	}
 }
 
