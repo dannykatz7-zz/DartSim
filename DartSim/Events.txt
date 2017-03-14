@@ -1,2 +1,2 @@
-c,Engs 65,Thayer,2,2,18,4,18,Danny Katz,Evan Schlick,Miranda Lawson;
+c,Engs 65,Thayer,2,2,18,4,18,Euguene Santos,Danny Katz,Evan Schlick,Miranda Lawson;
 c,Spain in the Golden Age,Carson,3,1,14,3,14,5,14,David Lagomarsino,Evan Schlick,Danny Katz;

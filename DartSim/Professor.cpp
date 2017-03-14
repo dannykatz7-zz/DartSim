@@ -14,6 +14,14 @@ Professor::Professor(string fullName, string mGender, int bYear, int bMonth, int
 }
 
 
+Professor::Professor(vector<string> v) {
+	this->setName(v[1]);
+	this->setGender(v[2]);
+	this->setBirthday(stoi(v[3], nullptr, 10), stoi(v[4], nullptr, 10),
+		stoi(v[5], nullptr, 10));
+	department = v[6];
+}
+
 Professor::~Professor()
 {
 }

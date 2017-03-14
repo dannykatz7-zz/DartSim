@@ -14,6 +14,13 @@ Student::Student(string fullName, string mGender, int bYear, int bMonth, int bDa
 	classYear = classYr;
 }
 
+Student::Student(vector<string> v) {
+	this->setName(v[1]);
+	this->setGender(v[2]);
+	this->setBirthday(stoi(v[3], nullptr, 10), stoi(v[4], nullptr, 10),
+		stoi(v[5], nullptr, 10));
+	classYear = stoi(v[6], nullptr, 10);
+}
 
 Student::~Student()
 {

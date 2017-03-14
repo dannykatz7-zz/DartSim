@@ -88,13 +88,11 @@ Person parse_names(string istring) {
 	v = ParseStrings(istring);
 
 	if (v[0] == "s") {
-		Student stud(v[1], v[2], stoi(v[3], nullptr, 10), stoi(v[4], nullptr, 10),
-			stoi(v[5], nullptr, 10), stoi(v[6], nullptr, 10));
+		Student stud(v);
 		return stud;
 	}
 	else if (v[0] == "p") {
-		Professor prof(v[1], v[2], stoi(v[3], nullptr, 10), stoi(v[4], nullptr, 10),
-			stoi(v[5], nullptr, 10), v[6]);
+		Professor prof(v);
 		return prof;
 	}
 	else {
@@ -105,7 +103,7 @@ Person parse_names(string istring) {
 
 Event build(string estring, vector<Person>& peeps) {
 	int day_num;
-	vector<string> v;
+	vector<string> v,d;
 	vector<DateAndTime> dts;
 
 	v = ParseStrings(estring);
@@ -138,6 +136,7 @@ Event build(string estring, vector<Person>& peeps) {
 					peeps[i].addEvent(crse);
 			}
 		}
+		return crse;
 	}
 	else if (v[0] == "g") {
 
