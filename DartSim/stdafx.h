@@ -13,6 +13,7 @@ using namespace std;
 #include <tchar.h>
 #include <vector>
 #include <iostream>
+#include <fstream>
 
 #include "DateAndTime.h"
 #include "Event.h"

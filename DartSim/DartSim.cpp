@@ -6,9 +6,26 @@
 
 using namespace std;
 
+Person parse_names(string);
 
 int main()
 {	
+	int catcher;
+	vector<Person> people;
+	string istring;
+	ifstream myfile;
+	myfile.open("Text.txt");
+	if (!myfile.is_open()) {
+		cout << "Error finding read-in file, exiting program " << endl;
+		exit(0);
+	}
+	while (getline(myfile, istring)) {
+		people.insert(people.end(), parse_names(istring));
+	}
+	
+	cout << people.front() << endl;
+	cin >> catcher;
+	/*
 	MasterClock clock;
 	Person dan("Danny Katz", "Male", 1993, 8, 29);
 	DateAndTime time_engs65;
@@ -39,6 +56,24 @@ int main()
 			clock.tickHours(atoi(input.c_str()));
 		}
 
-	}
+	}*/
+	return 0;
 }
 
+Person parse_names(string istring) {
+	const char c = ',';
+	string buff{ "" };
+	vector<string> v;
+
+	for (auto n : istring)
+	{
+		if (n != c) buff += n; else
+			if (n == c && buff != "") { v.push_back(buff); buff = ""; }
+	}
+	if (buff != "") v.push_back(buff);
+
+	Person indiv(v[0], v[1], stoi(v[2],nullptr, 10), stoi(v[3], nullptr, 10),
+		stoi(v[4], nullptr, 10)); 
+
+	return indiv;
+}

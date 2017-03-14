@@ -26,9 +26,9 @@ Person::Person(string fullName, string mGender, int bYear, int bMonth, int bDate
 }
 
 vector<Event>::iterator Person::addEvent(Event evnt) {
-	//Make an iterator for the end of the loop because insert takes an iterator
+	//Make an iterator for the end of the loop because insert takes an iter
 	vector<Event>::iterator it = events.end();
-	//Insert the event into the end of the vector
+	//Insert the event into the end of the vectors
 	events.insert(it, evnt);
 	//return the position 
 	return it;
