@@ -43,15 +43,15 @@ void Person::onClock(MasterClock clock)
 {
 	//Create an iterator and set to start of vector
 	vector<Event>::iterator it;
-
+	bool go_to_event = false;
 	//for each event in events
 	for (it = events.begin(); it != events.end(); ++it)
 	{
 		for (DateAndTime dt : it->get_event_times()) {
-			if (dt.getDay() == clock.getDay()) {
-				if (dt.getHour() == clock.getHour()) {
-					location = it->get_location();
-				}
+
+			if (dt == clock.getDT()) {
+				location = it->get_location();
+				go_to_event = true;
 			}
 		}
 	}
@@ -81,7 +81,7 @@ ostream& operator<<(std::ostream& os, Person pers) {
 	for (Event vents : pers.events) {
 		os << vents;
 	}
-	os << "Current location: " << pers.location << endl; 
+	os << "Current location: " << pers.location << endl;
 	return os;
 }
 

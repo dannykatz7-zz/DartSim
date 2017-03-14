@@ -51,3 +51,8 @@ int MasterClock::getDay()
 {
 	return day;
 }
+
+DateAndTime MasterClock::getDT() {
+	DateAndTime dt(getDay(), getHour());
+	return dt;
+}

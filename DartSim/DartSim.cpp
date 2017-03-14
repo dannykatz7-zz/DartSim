@@ -71,6 +71,9 @@ int main()
 			clock.tickHours(atoi(input.c_str()));
 		}
 
+		for (Person p : people) {
+			p.onClock(clock);
+		}
 	}
 	cout << people.front() << endl;
 	cin >> catcher;

@@ -33,3 +33,12 @@ int DateAndTime::getHour() const
 void DateAndTime::setHour(int hour1) {
 	hour = hour1;
 }
+
+bool DateAndTime::operator==(const DateAndTime & other)
+{
+	if (this->getDay() == other.getDay() && this->getHour() == other.getHour()) {
+		return true;
+	}
+	else
+		return false;
+}

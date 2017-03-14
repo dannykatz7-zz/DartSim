@@ -9,6 +9,7 @@ public:
 	void nextDay(); //resets to 9am the next day
 	int getHour();
 	int getDay();
+	DateAndTime getDT();
 private:
 	int hour;
 	int day;
