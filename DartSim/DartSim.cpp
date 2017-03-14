@@ -25,7 +25,7 @@ int main()
 	}
 
 	//read the strings into proper forms and store in a vector of people
-	while (getline(mynames, istring, ';')) {
+	while (getline(mynames, istring)) {
 		people.insert(people.end(), parse_names(istring));
 	}
 
@@ -129,9 +129,10 @@ Event build(string estring, vector<Person>& peeps) {
 	Event vent(v[0], v[1], dts);
 	
 	for (int i = 0; i < peeps.size(); ++i){
-		for (auto l : v) {
-			if (l == peeps[i].getName()) {
+		for (auto s : v) {
+			if (s == peeps[i].getName()) {
 				peeps[i].addEvent(vent);
+				cout << "adding event" << endl;
 			}
 		}
 	}
