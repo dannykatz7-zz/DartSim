@@ -40,7 +40,7 @@ vector<int> Event::get_days() const{
 	vector<int> days;
 	for (DateAndTime dt : date_and_times) {
 		vector<int>::iterator it = days.end();
-		days.insert(it, dt.getDay);
+		days.insert(it, dt.getDay());
 	}
 	return days;
 }
@@ -49,7 +49,7 @@ vector<int> Event::get_hours() const{
 	vector<int> times;
 	for (DateAndTime dt : date_and_times) {
 		vector<int>::iterator it = times.end();
-		times.insert(it, dt.getHour);
+		times.insert(it, dt.getHour());
 	}
 	return times;
 }

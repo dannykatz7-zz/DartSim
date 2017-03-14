@@ -54,8 +54,8 @@ void Person::onClock(MasterClock clock)
 		//	if (it->get_hour() == clock.getHour()) {
 				/*TODO: Whatever the hell you wanted to do here */
 		//		location = it->get_location();
-			}
-		}
+		//	}
+		//}
 	}
 }
 
