@@ -25,7 +25,7 @@ int main()
 	}
 
 	//read the strings into proper forms and store in a vector of people
-	while (getline(mynames, istring)) {
+	while (getline(mynames, istring, ';')) {
 		people.insert(people.end(), parse_names(istring));
 	}
 
