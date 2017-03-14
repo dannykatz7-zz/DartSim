@@ -106,9 +106,15 @@ Person parse_names(string istring) {
 		return stud;
 	}
 	else if (v[0] == "p") {
-
+		Professor prof(v[1], v[2], stoi(v[3], nullptr, 10), stoi(v[4], nullptr, 10),
+			stoi(v[5], nullptr, 10), v[6]);
+		return prof;
 	}
-
+	else {
+		Person indiv(v[1], v[2], stoi(v[3], nullptr, 10), stoi(v[4], nullptr, 10),
+			stoi(v[5], nullptr, 10));
+		return indiv;
+	}
 }
 
 Event build(string estring, vector<Person>& peeps) {
@@ -133,19 +139,19 @@ Event build(string estring, vector<Person>& peeps) {
 		i += 2;
 		--day_num;
 	}
-
-	Event vent(v[1], v[2], dts);
 	
 	if (v[0] == "e") {
+		Event vent(v[1], v[2], dts);
 		for (int i = 0; i < peeps.size(); ++i) {
 			for (auto s : v) {
 				if (s == peeps[i].getName()) 
 					peeps[i].addEvent(vent);
 			}
 		}
+		return vent;
 	}
 	else if (v[0] == "c") {
-
+		Course crse(v[1], v[2], dts);
 	}
 	else if (v[0] == "g") {
 
@@ -153,6 +159,4 @@ Event build(string estring, vector<Person>& peeps) {
 	else {
 
 	}
-
-	return vent;
 }

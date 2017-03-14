@@ -31,3 +31,11 @@ ostream& operator<<(std::ostream& os, const Student stud) {
 	os << "Current location: " << stud.getLocation() << endl;
 	return os;
 }
+
+int Student::get_classYear() {
+	return classYear;
+}
+
+void Student::set_classYear(int cy) {
+	classYear = cy;
+}
