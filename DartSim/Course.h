@@ -5,7 +5,6 @@ class Course :
 	public Event
 {
 public:
-	Course();
 	Course(string, string, vector<DateAndTime>, Professor);
 	~Course();
 	Professor getProf();
