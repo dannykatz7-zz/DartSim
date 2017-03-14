@@ -1,6 +1,9 @@
 #include "stdafx.h"
 #include "Professor.h"
 
+Professor::Professor() {
+
+}
 
 Professor::Professor(string fullName, string mGender, int bYear, int bMonth, int bDate, string dptmt)
 {

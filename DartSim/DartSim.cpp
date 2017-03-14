@@ -151,7 +151,7 @@ Event build(string estring, vector<Person>& peeps) {
 		return vent;
 	}
 	else if (v[0] == "c") {
-		Course crse(v[1], v[2], dts);
+		Course crse(v[1], v[2], dts,  "need professor here"); //TODO: Add professor from csv here
 	}
 	else if (v[0] == "g") {
 

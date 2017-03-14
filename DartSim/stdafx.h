@@ -14,7 +14,8 @@ using namespace std;
 #include <vector>
 #include <iostream>
 #include <fstream>
-									
+					
+#include "Affiliation.h"
 #include "DateAndTime.h"
 #include "Course.h"
 #include "Event.h"
