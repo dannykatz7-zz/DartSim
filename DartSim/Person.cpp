@@ -2,9 +2,9 @@
 
 using namespace std;
 
+//Create generic details for undefined Person
 Person::Person()
 {
-	//Create generic details for undefined Person
 	name = "John Doe";
 	gender = "Unknown";
 	birthYear = 0;
@@ -12,6 +12,7 @@ Person::Person()
 	birthYear = 0;
 }
 
+//Create person from series of data inputs
 Person::Person(string fullName, string mGender, int bYear, int bMonth, int bDate)
 {
 	name = fullName;
@@ -22,6 +23,18 @@ Person::Person(string fullName, string mGender, int bYear, int bMonth, int bDate
 	string home = "home";
 	//location = home.c_str(); //need to set location here
 }
+
+//Create a person given a parsed vector of strings from a file line
+Person::Person(vector<string> v) {
+	name = v[1];
+	gender = v[2];
+	birthYear = stoi(v[3], nullptr, 10);
+	birthMonth = stoi(v[4], nullptr, 10);
+	birthDate = stoi(v[5], nullptr, 10);
+	string home = "home";
+	//location = home.c_str(); //need to set location here
+}
+
 
 vector<Event>::iterator Person::addEvent(Event &evnt) {
 	//Make an iterator for the end of the loop because insert takes an iter

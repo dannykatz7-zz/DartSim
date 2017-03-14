@@ -8,6 +8,7 @@ using namespace std;
 
 Person parse_names(string);
 Event build(string, vector<Person>&);
+vector<string> ParseStrings(string);
 
 int main()
 {	
@@ -81,24 +82,10 @@ int main()
 }
 
 Person parse_names(string istring) {
-	const char c = ',';
-	string buff{ "" };
 	vector<string> v;
 	Student stud;
 
-	for (auto n : istring)
-	{
-		if (n != c) {
-			buff += n;
-		}
-		else if (n == c && buff != "") {
-			v.push_back(buff); 
-			buff = ""; 
-		}
-	}
-	if (buff != "") {
-		v.push_back(buff);
-	}
+	v = ParseStrings(istring);
 
 	if (v[0] == "s") {
 		Student stud(v[1], v[2], stoi(v[3], nullptr, 10), stoi(v[4], nullptr, 10),
@@ -111,25 +98,17 @@ Person parse_names(string istring) {
 		return prof;
 	}
 	else {
-		Person indiv(v[1], v[2], stoi(v[3], nullptr, 10), stoi(v[4], nullptr, 10),
-			stoi(v[5], nullptr, 10));
+		Person indiv(v);
 		return indiv;
 	}
 }
 
 Event build(string estring, vector<Person>& peeps) {
 	int day_num;
-	const char c = ',';
-	string buff{ "" };
 	vector<string> v;
 	vector<DateAndTime> dts;
 
-	for (auto n : estring)
-	{
-		if (n != c) buff += n; else
-			if (n == c && buff != "") { v.push_back(buff); buff = ""; }
-	}
-	if (buff != "") v.push_back(buff);
+	v = ParseStrings(estring);
 
 	day_num = stoi(v[3], nullptr, 10);
 	int i = 0;
@@ -140,7 +119,6 @@ Event build(string estring, vector<Person>& peeps) {
 		--day_num;
 	}
 	
-	Event vent(v[1], v[2], dts);
 	if (v[0] == "e") {
 		Event vent(v[1], v[2], dts);
 		for (int i = 0; i < peeps.size(); ++i) {
@@ -153,7 +131,13 @@ Event build(string estring, vector<Person>& peeps) {
 		i += 2;
 	}
 	else if (v[0] == "c") {
-		/*Course crse(v[1], v[2], dts, v[4 + stoi(v[3], nullptr, 10)*2]);*/
+		Course crse(v[1], v[2], dts, v[4 + stoi(v[3], nullptr, 10)*2]);
+		for (int i = 0; i < peeps.size(); ++i) {
+			for (auto s : v) {
+				if (s == peeps[i].getName() )
+					peeps[i].addEvent(crse);
+			}
+		}
 	}
 	else if (v[0] == "g") {
 
@@ -161,5 +145,26 @@ Event build(string estring, vector<Person>& peeps) {
 	else {
 
 	}
-	return vent;
+}
+
+vector<string> ParseStrings(string istring) {
+	const char c = ',';
+	string buff{ "" };
+	vector<string> v;
+
+	for (auto n : istring)
+	{
+		if (n != c) {
+			buff += n;
+		}
+		else if (n == c && buff != "") {
+			v.push_back(buff);
+			buff = "";
+		}
+	}
+	if (buff != "") {
+		v.push_back(buff);
+	}
+
+	return v;
 }

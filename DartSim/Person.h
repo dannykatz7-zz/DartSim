@@ -9,6 +9,7 @@ class Person
 public:
 	Person(); 
 	Person(string fullName, string mGender, int bYear, int bMonth, int bDate);
+	Person(vector<string>);
 	string getName() const;
 	string getGender() const;
 	string getBirthday() const; //returns formatted Birthday ie 07/12/1995 
