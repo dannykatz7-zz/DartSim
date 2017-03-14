@@ -7,9 +7,7 @@ Course::Course() {
 
 Course::Course(string nam, string loc, vector<DateAndTime> dts, string prof)
 {
-	Professor x;
-	x.setName(prof);
-	professor = x;
+	professor = prof;
 	set_event_name(nam);
 	set_event_location(loc);
 	set_event_times(dts);
