@@ -43,17 +43,20 @@ void Person::onClock(MasterClock clock)
 {
 	//Create an iterator and set to start of vector
 	vector<Event>::iterator it;
-	bool go_to_event = false;
 	//for each event in events
+	bool found_event = false;
 	for (it = events.begin(); it != events.end(); ++it)
 	{
 		for (DateAndTime dt : it->get_event_times()) {
 
 			if (dt == clock.getDT()) {
 				location = it->get_location();
-				go_to_event = true;
+				found_event = true;
+				break;
 			}
 		}
+		if (found_event)
+			break;
 	}
 }
 
