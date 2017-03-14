@@ -59,21 +59,20 @@ int main()
 		string input;
 		getline(cin, input); 
 		if (input == "")
-		{
 			clock.tick();
-		}
 		else if (input == "next" || input == "\"next\"")
-		{
 			clock.nextDay();
-		}
 		else if(atoi(input.c_str()) > 0)
-		{
 			clock.tickHours(atoi(input.c_str()));
-		}
+		else {}
 
 		for (Person p : people) {
 			p.onClock(clock);
+			p.toString();
 		}
+		cout << endl;
+
+
 	}
 	cout << people.front() << endl;
 	cin >> catcher;

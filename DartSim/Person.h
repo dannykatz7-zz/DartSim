@@ -19,6 +19,7 @@ public:
 	void setName(string);
 	void setGender(string);
 	void setBirthday(int, int, int);
+	void toString();
 	~Person();
 
 private:
@@ -29,6 +30,7 @@ private:
 	int birthMonth; //NOT zero indexed, i.e. 1 = January
 	int birthDate; //also NOT zero indexed
 	vector<Event> events;
-	string location; 
+	string location;
+	string eventName;
 };
 
