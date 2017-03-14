@@ -17,10 +17,10 @@ using namespace std;
 
 #include "DateAndTime.h"
 #include "Event.h"
+#include "Game.h"
 #include "MasterClock.h"
 #include "Person.h"
 #include "Professor.h"
-#include "SportsEvent.h"
 #include "Student.h"
 #include "Team.h"
 
