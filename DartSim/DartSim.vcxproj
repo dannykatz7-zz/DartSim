@@ -147,6 +147,7 @@
     <Text Include="Text.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Course.h" />
     <ClInclude Include="DateAndTime.h" />
     <ClInclude Include="Event.h" />
     <ClInclude Include="Game.h" />
@@ -159,6 +160,7 @@
     <ClInclude Include="Team.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Course.cpp" />
     <ClCompile Include="DartSim.cpp" />
     <ClCompile Include="DateAndTime.cpp" />
     <ClCompile Include="Event.cpp" />
