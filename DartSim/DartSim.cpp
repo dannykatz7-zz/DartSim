@@ -43,38 +43,7 @@ int main()
 	
 	cout << people.front() << endl;
 	cin >> catcher;
-	/*
-	MasterClock clock;
-	Person dan("Danny Katz", "Male", 1993, 8, 29);
-	DateAndTime time_engs65;
-	time_engs65.setDay(2);
-	time_engs65.setHour(4);
-	Event engs65("Software Design", "Thayer", time_engs65);
-	dan.addEvent(engs65);
-
-	bool running = true;
-
-	while (running) {
-		cout << "The time is " << clock.getHour() << "h" << " on day " <<
-			clock.getDay() << endl;
-		cout << "Press enter to advance 1 hour" << endl;
-		cout << "Enter a number to advance that many hours" << endl;
-		cout << "Enter \"next\" to advance a day" << endl;
-		string input;
-		getline(cin, input);
-		if (input == "")
-		{
-			clock.tick();
-		}
-		else if (input == "next" || input == "\"next\"")
-		{
-			clock.nextDay();
-		}
-		{
-			clock.tickHours(atoi(input.c_str()));
-		}
-
-	}*/
+	
 	return 0;
 }
 
@@ -97,8 +66,7 @@ Person parse_names(string istring) {
 }
 
 Event build(string estring, vector<Person>& peeps) {
-	Event vent;
-	int day_num, time_num;
+	int day_num;
 	const char c = ',';
 	string buff{ "" };
 	vector<string> v;
@@ -120,7 +88,15 @@ Event build(string estring, vector<Person>& peeps) {
 		--day_num;
 	}
 
-
-
+	Event vent(v[0], v[1], dts);
+	
+	for (auto p : peeps) {
+		for (auto i : v) {
+			if (i == p.getName())
+				cout << "blah" << endl;
+				p.addEvent(vent);
+		}
+		cout << p << endl;
+	}
 	return vent;
 }

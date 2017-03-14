@@ -1,1 +1,1 @@
-Engs 65, Thayer, 2, 2, 18, 4, 18, Danny Katz, Evan Schlick;
+Engs 65,Thayer,2,2,18,4,18,Danny Katz,Evan Schlick;
