@@ -65,3 +65,18 @@ ostream& operator<<(std::ostream& os, const Event evnt) {
 		<< evnt.dt.getDay() << " " << evnt.dt.getHour() << ":00" << endl;
 	return os;
 }
+
+vector<string>::iterator Event::addPerson(string pers) {
+	//Make an iterator for the end of the loop because insert takes an iter
+	vector<string>::iterator it = people.end();
+	//Insert the event into the end of the vectors
+	people.insert(it, pers);
+	//return the position 
+	return it;
+}
+
+vector<string> Event::getPeople()
+{
+	//Return event vector
+	return people;
+}

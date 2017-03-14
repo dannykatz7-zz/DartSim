@@ -1,6 +1,5 @@
 #pragma once
 #include <vector>
-class Person;
 
 class Event
 {
@@ -8,7 +7,7 @@ private:
 	string event_name;
 	string location;
 	DateAndTime dt;
-	vector<Person> people;
+	vector<string> people;
 
 public:
 	Event();
@@ -24,5 +23,7 @@ public:
 	string get_location() const;
 	void set_event_location(string);
 	friend ostream& operator<<(std::ostream& os, const Event);
+	vector<string>::iterator addPerson(string);
+	vector<string> getPeople();
 };
 

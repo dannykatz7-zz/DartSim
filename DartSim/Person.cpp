@@ -28,6 +28,7 @@ vector<Event>::iterator Person::addEvent(Event evnt) {
 	vector<Event>::iterator it = events.end();
 	//Insert the event into the end of the vectors
 	events.insert(it, evnt);
+	events.back().addPerson(name);
 	//return the position 
 	return it;
 }
