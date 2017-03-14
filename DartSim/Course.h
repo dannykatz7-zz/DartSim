@@ -5,11 +5,11 @@ class Course :
 	public Event
 {
 public:
-	Course(string, string, vector<DateAndTime>, Professor);
+	Course(string, string, vector<DateAndTime>, string);
 	~Course();
-	Professor getProf();
+	string getProf();
 
 private:
-	Professor professor;
+	string professor;
 	string department;
 };

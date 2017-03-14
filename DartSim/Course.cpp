@@ -2,7 +2,7 @@
 #include "stdafx.h"
 
 
-Course::Course(string nam, string loc, vector<DateAndTime> dts, Professor prof)
+Course::Course(string nam, string loc, vector<DateAndTime> dts, string prof)
 {
 	professor = prof;
 	set_event_name(nam);
@@ -15,6 +15,6 @@ Course::~Course()
 {
 }
 
-Professor Course::getProf() {
+string Course::getProf() {
 	return professor;
 }

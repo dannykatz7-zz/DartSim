@@ -140,6 +140,7 @@ Event build(string estring, vector<Person>& peeps) {
 		--day_num;
 	}
 	
+	Event vent(v[1], v[2], dts);
 	if (v[0] == "e") {
 		Event vent(v[1], v[2], dts);
 		for (int i = 0; i < peeps.size(); ++i) {
@@ -149,9 +150,10 @@ Event build(string estring, vector<Person>& peeps) {
 			}
 		}
 		return vent;
+		i += 2;
 	}
 	else if (v[0] == "c") {
-		Course crse(v[1], v[2], dts);
+		/*Course crse(v[1], v[2], dts, v[4 + stoi(v[3], nullptr, 10)*2]);*/
 	}
 	else if (v[0] == "g") {
 
@@ -159,4 +161,5 @@ Event build(string estring, vector<Person>& peeps) {
 	else {
 
 	}
+	return vent;
 }
