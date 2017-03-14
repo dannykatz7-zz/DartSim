@@ -7,6 +7,7 @@ private:
 	string event_name;
 	string location;
 	DateAndTime dt;
+	vector<Person> people;
 
 public:
 	Event();

@@ -7,20 +7,38 @@
 using namespace std;
 
 Person parse_names(string);
+vector<Event> build(string, vector<Person>&);
 
 int main()
 {	
 	int catcher;
 	vector<Person> people;
-	string istring;
-	ifstream myfile;
-	myfile.open("Text.txt");
-	if (!myfile.is_open()) {
-		cout << "Error finding read-in file, exiting program " << endl;
+	vector<Event> events;
+	string istring, estring;
+	ifstream mynames, myevents;
+
+	//Open the file with basic person info
+	mynames.open("Text.txt");
+	if (!mynames.is_open()) {
+		cout << "Error finding read-in file: Text.txt, exiting program " << endl;
 		exit(0);
 	}
-	while (getline(myfile, istring)) {
+
+	//read the strings into proper forms and store in a vector of people
+	while (getline(mynames, istring)) {
 		people.insert(people.end(), parse_names(istring));
+	}
+
+	//Open the file with event info and people enrolled in given events
+	myevents.open("Events.txt");
+	if (!myevents.is_open()) {
+		cout << "Error finding read-in file: Events.txt, exiting program " << endl;
+		exit(0);
+	}
+
+	//read the strings into proper form and connect people to events
+	while (getline(myevents, estring, ';')) {
+		events = build(estring, people);
 	}
 	
 	cout << people.front() << endl;
@@ -76,4 +94,19 @@ Person parse_names(string istring) {
 		stoi(v[4], nullptr, 10)); 
 
 	return indiv;
+}
+
+vector<Event> build(string estring, vector<Person>& peeps) {
+	const char c = ',';
+	string buff{ "" };
+	vector<string> v;
+
+	for (auto n : estring)
+	{
+		if (n != c) buff += n; else
+			if (n == c && buff != "") { v.push_back(buff); buff = ""; }
+	}
+	if (buff != "") v.push_back(buff);
+
+
 }
