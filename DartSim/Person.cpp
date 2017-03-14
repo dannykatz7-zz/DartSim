@@ -88,6 +88,22 @@ ostream& operator<<(std::ostream& os, Person pers) {
 	return os;
 }
 
+void Person::setName(string n) {
+	name = n;
+}
+
+void Person::setGender(string g) {
+	gender = g;
+}
+
+void Person::setBirthday(int y, int m, int d) {
+	birthYear = y;
+	birthMonth = m;
+	birthDate = d;
+}
+
+
+
 Person::~Person()
 {
 }

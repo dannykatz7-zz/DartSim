@@ -16,6 +16,9 @@ public:
 	void onClock(MasterClock clock);
 	string getLocation(); 
 	friend ostream& operator<<(std::ostream& os, const Person); 
+	void setName(string);
+	void setGender(string);
+	void setBirthday(int, int, int);
 	~Person();
 
 private:
