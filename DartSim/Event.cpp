@@ -5,22 +5,14 @@ Event::Event()
 {
 	event_name;
 	location;
-	dt;
+	date_and_times;
 }
 
-Event::Event(string name1, string loc1, DateAndTime dt1)
+Event::Event(string name1, string loc1, vector<DateAndTime> dts)
 {
 	event_name = name1;
 	location = loc1;
-	dt = dt1;
-}
-
-Event::Event(string ev_name, string loc_name, int day, int hour) 
-{
-	event_name = ev_name;
-	location = (loc_name);
-	dt.setDay(day);
-	dt.setHour(hour);
+	date_and_times = dts;
 }
 
 Event::~Event()
@@ -35,22 +27,33 @@ void Event::set_event_name(string ev_name) {
 	event_name = ev_name;
 }
 
-DateAndTime Event::get_event_time() const{
-	return dt;
+vector<DateAndTime> Event::get_event_times() const{
+	return date_and_times;
 }
 
-void Event::set_event_time(DateAndTime d)
+void Event::set_event_times(vector<DateAndTime> d)
 {
-	dt = d;
+	date_and_times = d;
 }
 
-int Event::get_day() const{
-	return dt.getDay();
+vector<int> Event::get_days() const{
+	vector<int> days;
+	for (DateAndTime dt : date_and_times) {
+		vector<int>::iterator it = days.end();
+		days.insert(it, dt.getDay);
+	}
+	return days;
 }
-
-int Event::get_hour() const{
-	return dt.getHour();
+/*
+vector<int> Event::get_hours() const{
+	vector<int> times;
+	for (DateAndTime dt : date_and_times) {
+		vector<int>::iterator it = times.end();
+		times.insert(it, dt.getHour);
+	}
+	return times;
 }
+*/
 
 string Event::get_location() const {
 	return location;
@@ -61,8 +64,10 @@ void Event::set_event_location(string loc) {
 }
 
 ostream& operator<<(std::ostream& os, const Event evnt) {
+	/*TODO: needs to iterate through all dates and times and print those
 	os << evnt.event_name << ", " << evnt.location << ", " 
-		<< evnt.dt.getDay() << " " << evnt.dt.getHour() << ":00" << endl;
+		<< evnt.date_and_times.getDays() << " " << evnt.date_and_times.getHours() << ":00" << endl;
+		*/
 	return os;
 }
 
