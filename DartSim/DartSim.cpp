@@ -51,9 +51,28 @@ int main()
 	
 	bool running = true;
 	MasterClock clock;
+	string day;
 	while (running) { //MAIN PROGRAM
-		cout << "The time is " << clock.getHour() << "h" << " on day " <<
-			clock.getDay() << endl;
+		switch (clock.getDay()) {
+		case 0: day = "Sunday";
+			break;
+		case 1: day = "Monday";
+			break;
+		case 2: day = "Tuesday";
+			break;
+		case 3: day = "Wednesday";
+			break;
+		case 4: day = "Thursday";
+			break;
+		case 5: day = "Friday";
+			break;
+		case 6: day = "Saturday";
+		default:
+			day = "undefined";
+			break;
+		}
+		cout << "The time is " << clock.getHour() << ":00" << " on day " <<
+			day << endl;
 		cout << "Press enter to advance 1 hour" << endl;
 		cout << "Enter a number to advance that many hours" << endl;
 		cout << "Enter \"next\" to advance a day" << endl;

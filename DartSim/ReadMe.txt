@@ -22,7 +22,7 @@ DartSim.vcxproj.filters
     "Source Files" filter).
 
 DartSim.cpp
-    This is the main application source file.
+    This is the main application source file.W
 
 /////////////////////////////////////////////////////////////////////////////
 Other standard files:
