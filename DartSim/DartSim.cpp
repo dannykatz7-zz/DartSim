@@ -85,6 +85,7 @@ Person parse_names(string istring) {
 	const char c = ',';
 	string buff{ "" };
 	vector<string> v;
+	Student stud;
 
 	for (auto n : istring)
 	{
@@ -100,10 +101,15 @@ Person parse_names(string istring) {
 		v.push_back(buff);
 	}
 
-	Person indiv(v[0], v[1], stoi(v[2],nullptr, 10), stoi(v[3], nullptr, 10),
-		stoi(v[4], nullptr, 10)); 
+	if (v[0] == "s") {
+		Student stud(v[1], v[2], stoi(v[3], nullptr, 10), stoi(v[4], nullptr, 10),
+			stoi(v[5], nullptr, 10), stoi(v[6], nullptr, 10));
+		return stud;
+	}
+	else if (v[0] == "p") {
 
-	return indiv;
+	}
+
 }
 
 Event build(string estring, vector<Person>& peeps) {

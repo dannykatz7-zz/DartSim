@@ -33,7 +33,7 @@ vector<Event>::iterator Person::addEvent(Event &evnt) {
 	return it;
 }
 
-vector<Event> Person::getEvents()
+vector<Event> Person::getEvents() const
 {
 	//Return event vector
 	return events;
@@ -66,14 +66,18 @@ string Person::getBirthday() const
 	return bDay;
 }
 
-string Person::getLocation()
+string Person::getLocation() const
 {
 	return location;
 }
 
-string Person::getName()
+string Person::getName() const
 {
 	return name;
+}
+
+string Person::getGender() const {
+	return gender;
 }
 
 ostream& operator<<(std::ostream& os, Person pers) {
