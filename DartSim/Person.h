@@ -34,5 +34,6 @@ private:
 	vector<Event> events;
 	string location;
 	string eventName;
+	Event currEvent;
 };
 

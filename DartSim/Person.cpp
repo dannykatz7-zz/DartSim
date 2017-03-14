@@ -66,6 +66,7 @@ void Person::onClock(MasterClock clock)
 				location = it->get_location();
 				eventName = it->get_event_name();
 				found_event = true;
+				currEvent = (*it);
 				break;
 			}
 		}

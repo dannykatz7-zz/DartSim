@@ -9,7 +9,6 @@ public:
 	Course(string, string, vector<DateAndTime>, string);
 	~Course();
 	string getProf();
-
 private:
 	string professor;
 	string department;

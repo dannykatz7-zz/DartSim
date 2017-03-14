@@ -33,3 +33,8 @@ vector<Student> Team::getMembers()
 	//Return event vector
 	return members;
 }
+
+string Team::getSport()
+{
+	return sport;
+}
