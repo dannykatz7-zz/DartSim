@@ -11,7 +11,7 @@ public:
 	Person(string fullName, string mGender, int bYear, int bMonth, int bDate);
 	string getName();
 	string getBirthday() const; //returns formatted Birthday ie 07/12/1995 
-	vector<Event>::iterator addEvent(Event);
+	vector<Event>::iterator addEvent(Event&);
 	vector<Event> getEvents();
 	void onClock(MasterClock clock);
 	string getLocation(); 

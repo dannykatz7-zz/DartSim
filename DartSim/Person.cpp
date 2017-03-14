@@ -23,12 +23,12 @@ Person::Person(string fullName, string mGender, int bYear, int bMonth, int bDate
 	//location = home.c_str(); //need to set location here
 }
 
-vector<Event>::iterator Person::addEvent(Event evnt) {
+vector<Event>::iterator Person::addEvent(Event &evnt) {
 	//Make an iterator for the end of the loop because insert takes an iter
 	vector<Event>::iterator it = events.end();
 	//Insert the event into the end of the vectors
-	events.insert(it, evnt);
-	events.back().addPerson(name);
+	events.insert(events.end(), evnt);
+	evnt.addPerson(name);
 	//return the position 
 	return it;
 }
@@ -78,8 +78,8 @@ ostream& operator<<(std::ostream& os, Person pers) {
 	os << "Gender: " << pers.gender << endl;
 	os << "Birthdate: " << pers.getBirthday() << endl;
 	os << "Events: ";
-	for (vector<Event>::iterator it = pers.events.begin(); it != pers.events.end(); ++it) {
-		os << (*it);
+	for (Event vents : pers.events) {
+		os << vents;
 	}
 	os << "Current location: " << pers.location << endl; 
 	return os;

@@ -64,10 +64,12 @@ void Event::set_event_location(string loc) {
 }
 
 ostream& operator<<(std::ostream& os, const Event evnt) {
-	/*TODO: needs to iterate through all dates and times and print those
-	os << evnt.event_name << ", " << evnt.location << ", " 
-		<< evnt.date_and_times.getDays() << " " << evnt.date_and_times.getHours() << ":00" << endl;
-		*/
+	os << endl << evnt.event_name << ", " << evnt.location << endl
+		<< "Times:" << endl;
+	for (auto dt : evnt.date_and_times) {
+		os << "	Day: " << dt.getDay() << " Time: " << dt.getHour() << ":00" << endl;
+	}
+
 	return os;
 }
 

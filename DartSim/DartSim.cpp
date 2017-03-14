@@ -90,13 +90,13 @@ Event build(string estring, vector<Person>& peeps) {
 
 	Event vent(v[0], v[1], dts);
 	
-	for (auto p : peeps) {
-		for (auto i : v) {
-			if (i == p.getName())
-				cout << "blah" << endl;
-				p.addEvent(vent);
+	for (int i = 0; i < peeps.size(); ++i){
+		for (auto l : v) {
+			if (l == peeps[i].getName()) {
+				peeps[i].addEvent(vent);
+			}
 		}
-		cout << p << endl;
 	}
+	cout << peeps.back() << endl;
 	return vent;
 }
