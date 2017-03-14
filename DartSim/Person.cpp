@@ -51,12 +51,16 @@ void Person::onClock(MasterClock clock)
 
 			if (dt == clock.getDT()) {
 				location = it->get_location();
+				eventName = it->get_event_name();
 				found_event = true;
 				break;
 			}
 		}
 		if (found_event)
 			break;
+		else
+			location = home;
+		eventName = "bed";
 	}
 }
 
@@ -106,7 +110,14 @@ void Person::setBirthday(int y, int m, int d) {
 	birthDate = d;
 }
 
-
+void Person::toString() {
+	if (location == home) {
+		cout << name << " is currently home" << endl;
+	}
+	else {
+		cout << name << " is currently attending " << eventName << " at " << location << endl;
+	}
+}
 
 Person::~Person()
 {
