@@ -52,7 +52,7 @@ int main()
 		cout << "Enter a number to advance that many hours" << endl;
 		cout << "Enter \"next\" to advance a day" << endl;
 		string input;
-		getline(cin, input);
+		getline(cin, input); 
 		if (input == "")
 		{
 			clock.tick();
