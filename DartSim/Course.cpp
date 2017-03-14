@@ -1,6 +1,9 @@
 #include "Course.h"
 #include "stdafx.h"
 
+Course::Course() {
+	
+}
 
 Course::Course(string nam, string loc, vector<DateAndTime> dts, string prof)
 {

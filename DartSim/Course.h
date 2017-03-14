@@ -6,7 +6,7 @@ class Course :
 {
 public:
 	Course();
-	Course(string, string, vector<DateAndTime>, string);
+	Course(string, string, vector<DateAndTime>, Professor);
 	~Course();
 	Professor getProf();
 
