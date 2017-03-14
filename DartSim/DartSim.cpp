@@ -7,7 +7,7 @@
 using namespace std;
 
 Person parse_names(string);
-vector<Event> build(string, vector<Person>&);
+Event build(string, vector<Person>&);
 
 int main()
 {	
@@ -38,7 +38,7 @@ int main()
 
 	//read the strings into proper form and connect people to events
 	while (getline(myevents, estring, ';')) {
-		events = build(estring, people);
+		events.insert(events.end(), build(estring, people));
 	}
 	
 	cout << people.front() << endl;
@@ -96,7 +96,8 @@ Person parse_names(string istring) {
 	return indiv;
 }
 
-vector<Event> build(string estring, vector<Person>& peeps) {
+Event build(string estring, vector<Person>& peeps) {
+	Event vent;
 	const char c = ',';
 	string buff{ "" };
 	vector<string> v;
@@ -108,5 +109,5 @@ vector<Event> build(string estring, vector<Person>& peeps) {
 	}
 	if (buff != "") v.push_back(buff);
 
-
+	return vent;
 }

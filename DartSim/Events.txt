@@ -1,1 +1,1 @@
-Engs 65, Thayer, /2,4/ Danny Katz, Evan Schlick;
+Engs 65, Thayer, 2, Tuesday, Thursday, Danny Katz, Evan Schlick;
