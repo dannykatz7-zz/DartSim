@@ -43,7 +43,31 @@ int main()
 	
 	cout << people.front() << endl;
 	cin >> catcher;
+	bool running = true;
+	MasterClock clock;
+	while (running) { //MAIN PROGRAM
+		cout << "The time is " << clock.getHour() << "h" << " on day " <<
+			clock.getDay() << endl;
+		cout << "Press enter to advance 1 hour" << endl;
+		cout << "Enter a number to advance that many hours" << endl;
+		cout << "Enter \"next\" to advance a day" << endl;
+		string input;
+		getline(cin, input); 
+		if (input == "")
+		{
+			clock.tick();
+		}
+		else if (input == "next" || input == "\"next\"")
+		{
+			clock.nextDay();
+		}
+		{
+			clock.tickHours(atoi(input.c_str()));
+		}
+
+	}
 	
+
 	return 0;
 }
 
