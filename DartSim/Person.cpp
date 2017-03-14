@@ -18,7 +18,7 @@ Person::Person(string fullName, string mGender, int bYear, int bMonth, int bDate
 	gender = mGender;
 	birthYear = bYear;
 	birthMonth = bMonth;
-	birthYear = bYear;
+	birthDate = bDate;
 	string home = "home";
 	//location = home.c_str(); //need to set location here
 }
