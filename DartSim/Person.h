@@ -9,12 +9,13 @@ class Person
 public:
 	Person(); 
 	Person(string fullName, string mGender, int bYear, int bMonth, int bDate);
-	string getName();
+	string getName() const;
+	string getGender() const;
 	string getBirthday() const; //returns formatted Birthday ie 07/12/1995 
 	vector<Event>::iterator addEvent(Event&);
-	vector<Event> getEvents();
+	vector<Event> getEvents() const;
 	void onClock(MasterClock clock);
-	string getLocation(); 
+	string getLocation() const; 
 	friend ostream& operator<<(std::ostream& os, const Person); 
 	void setName(string);
 	void setGender(string);

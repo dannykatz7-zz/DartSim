@@ -6,7 +6,8 @@ class Student :
 {
 public:
 	Student();
-	Student(string *fullName, string *mGender, int bYear, int bMonth, int bDay); 
+	Student(string fullName, string mGender, int bYear, int bMonth, int bDay, int classYr); 
+	friend ostream& operator<<(std::ostream& os, const Student);
 	~Student();
 private:
 	int classYear;
