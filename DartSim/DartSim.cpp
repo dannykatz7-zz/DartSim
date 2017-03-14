@@ -10,7 +10,7 @@ Person parse_names(string);
 Event build(string, vector<Person>&);
 
 int main()
-{
+{	
 	int catcher;
 	vector<Person> people;
 	vector<Event> events;
@@ -41,8 +41,9 @@ int main()
 		events.insert(events.end(), build(estring, people));
 	}
 
-	cout << people.front() << endl;
-	cin >> catcher;
+	for (auto p : people)
+		cout << p << endl;
+	
 	bool running = true;
 	MasterClock clock;
 	while (running) { //MAIN PROGRAM
@@ -52,7 +53,7 @@ int main()
 		cout << "Enter a number to advance that many hours" << endl;
 		cout << "Enter \"next\" to advance a day" << endl;
 		string input;
-		getline(cin, input);
+		getline(cin, input); 
 		if (input == "")
 		{
 			clock.tick();
@@ -61,12 +62,13 @@ int main()
 		{
 			clock.nextDay();
 		}
-		else if(atoi(input.c_str()) > 0)
 		{
 			clock.tickHours(atoi(input.c_str()));
 		}
 
 	}
+	cout << people.front() << endl;
+	cin >> catcher;
 
 	return 0;
 }
@@ -78,13 +80,20 @@ Person parse_names(string istring) {
 
 	for (auto n : istring)
 	{
-		if (n != c) buff += n; else
-			if (n == c && buff != "") { v.push_back(buff); buff = ""; }
+		if (n != c) {
+			buff += n;
+		}
+		else if (n == c && buff != "") {
+			v.push_back(buff); 
+			buff = ""; 
+		}
 	}
-	if (buff != "") v.push_back(buff);
+	if (buff != "") {
+		v.push_back(buff);
+	}
 
-	Person indiv(v[0], v[1], stoi(v[2], nullptr, 10), stoi(v[3], nullptr, 10),
-		stoi(v[4], nullptr, 10));
+	Person indiv(v[0], v[1], stoi(v[2],nullptr, 10), stoi(v[3], nullptr, 10),
+		stoi(v[4], nullptr, 10)); 
 
 	return indiv;
 }
@@ -106,21 +115,20 @@ Event build(string estring, vector<Person>& peeps) {
 	day_num = stoi(v[2], nullptr, 10);
 	int i = 0;
 	while (day_num > 0) {
-		DateAndTime dt(stoi(v[3 + i], nullptr, 10), stoi(v[4 + i], nullptr, 10));
+		DateAndTime dt(stoi(v[3+i],nullptr,10),stoi(v[4+i],nullptr,10));
 		dts.insert(dts.end(), dt);
 		i += 2;
 		--day_num;
 	}
 
 	Event vent(v[0], v[1], dts);
-
-	for (int i = 0; i < peeps.size(); ++i) {
+	
+	for (int i = 0; i < peeps.size(); ++i){
 		for (auto l : v) {
 			if (l == peeps[i].getName()) {
 				peeps[i].addEvent(vent);
 			}
 		}
 	}
-	cout << peeps.back() << endl;
 	return vent;
 }
