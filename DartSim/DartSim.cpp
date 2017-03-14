@@ -43,9 +43,11 @@ int main()
 	//read the strings into proper form and connect people to events
 	while (getline(myevents, estring, ';')) {
 		events.insert(events.end(), build(estring, people));
-		for (auto p : people)
-			cout << p << endl;
+		for (auto p : people) {
+			//cout << p << endl;
+		}
 	}
+
 
 
 	
@@ -68,7 +70,7 @@ int main()
 			break;
 		case 6: day = "Saturday";
 		default:
-			day = "undefined";
+			day = "Saturday";
 			break;
 		}
 		cout << "The time is " << clock.getHour() << ":00" << " on day " <<

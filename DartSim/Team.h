@@ -1,7 +1,8 @@
 #pragma once
 #include "stdafx.h"
 #include "Student.h"
-class Team
+class Team :
+	public Event
 {
 public:
 	Team();

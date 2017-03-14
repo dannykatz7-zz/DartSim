@@ -39,6 +39,9 @@ void MasterClock::tickHours(int hours)
 void MasterClock::nextDay()
 {
 	day++;
+	if (day == 7) {
+		day = 0;
+	}
 	hour = 9;
 }
 
