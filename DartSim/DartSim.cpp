@@ -40,9 +40,10 @@ int main()
 	while (getline(myevents, estring, ';')) {
 		events.insert(events.end(), build(estring, people));
 	}
+
+	for (auto p : people)
+		cout << p << endl;
 	
-	cout << people.front() << endl;
-	cin >> catcher;
 	bool running = true;
 	MasterClock clock;
 	while (running) { //MAIN PROGRAM
@@ -66,7 +67,8 @@ int main()
 		}
 
 	}
-	
+	cout << people.front() << endl;
+	cin >> catcher;
 
 	return 0;
 }
@@ -78,10 +80,17 @@ Person parse_names(string istring) {
 
 	for (auto n : istring)
 	{
-		if (n != c) buff += n; else
-			if (n == c && buff != "") { v.push_back(buff); buff = ""; }
+		if (n != c) {
+			buff += n;
+		}
+		else if (n == c && buff != "") {
+			v.push_back(buff); 
+			buff = ""; 
+		}
 	}
-	if (buff != "") v.push_back(buff);
+	if (buff != "") {
+		v.push_back(buff);
+	}
 
 	Person indiv(v[0], v[1], stoi(v[2],nullptr, 10), stoi(v[3], nullptr, 10),
 		stoi(v[4], nullptr, 10)); 
@@ -121,6 +130,5 @@ Event build(string estring, vector<Person>& peeps) {
 			}
 		}
 	}
-	cout << peeps.back() << endl;
 	return vent;
 }
