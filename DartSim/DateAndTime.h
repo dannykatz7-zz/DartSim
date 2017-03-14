@@ -3,6 +3,7 @@ class DateAndTime
 {
 public:
 	DateAndTime();
+	DateAndTime(int, int);
 	~DateAndTime();
 	int getDay() const;
 	void setDay(int);

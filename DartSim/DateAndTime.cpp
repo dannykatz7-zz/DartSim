@@ -6,6 +6,11 @@ DateAndTime::DateAndTime()
 {
 }
 
+DateAndTime::DateAndTime(int d, int t)
+{
+	day = d;
+	hour = t;
+}
 
 DateAndTime::~DateAndTime()
 {

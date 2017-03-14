@@ -62,7 +62,7 @@ void Event::set_event_location(string loc) {
 
 ostream& operator<<(std::ostream& os, const Event evnt) {
 	os << evnt.event_name << ", " << evnt.location << ", " 
-		<< evnt.dt.getDay() << " " << evnt.dt.getHour() << ":00" << endl;
+		<< evnt.dt.getDay() << ", " << evnt.dt.getHour() << ":00" << endl;
 	return os;
 }
 

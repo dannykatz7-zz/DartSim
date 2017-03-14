@@ -98,9 +98,11 @@ Person parse_names(string istring) {
 
 Event build(string estring, vector<Person>& peeps) {
 	Event vent;
+	int day_num, time_num;
 	const char c = ',';
 	string buff{ "" };
 	vector<string> v;
+	vector<DateAndTime> dts;
 
 	for (auto n : estring)
 	{
@@ -108,6 +110,17 @@ Event build(string estring, vector<Person>& peeps) {
 			if (n == c && buff != "") { v.push_back(buff); buff = ""; }
 	}
 	if (buff != "") v.push_back(buff);
+
+	day_num = stoi(v[2], nullptr, 10);
+	int i = 0;
+	while (day_num > 0) {
+		DateAndTime dt(stoi(v[3+i],nullptr,10),stoi(v[4+i],nullptr,10));
+		dts.insert(dts.end(), dt);
+		i += 2;
+		--day_num;
+	}
+
+
 
 	return vent;
 }
