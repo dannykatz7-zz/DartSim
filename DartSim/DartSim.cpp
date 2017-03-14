@@ -66,6 +66,7 @@ int main()
 		{
 			clock.nextDay();
 		}
+		else if(atoi(input.c_str()) > 0)
 		{
 			clock.tickHours(atoi(input.c_str()));
 		}
