@@ -29,6 +29,9 @@ int main()
 		people.insert(people.end(), parse_names(istring));
 	}
 
+	for (auto p : people)
+		cout << p << endl;
+
 	//Open the file with event info and people enrolled in given events
 	myevents.open("Events.txt");
 	if (!myevents.is_open()) {
@@ -39,10 +42,11 @@ int main()
 	//read the strings into proper form and connect people to events
 	while (getline(myevents, estring, ';')) {
 		events.insert(events.end(), build(estring, people));
+		for (auto p : people)
+			cout << p << endl;
 	}
 
-	for (auto p : people)
-		cout << p << endl;
+
 	
 	bool running = true;
 	MasterClock clock;
