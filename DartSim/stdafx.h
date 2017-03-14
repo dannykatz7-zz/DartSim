@@ -16,6 +16,7 @@ using namespace std;
 #include <fstream>
 									
 #include "DateAndTime.h"
+#include "Course.h"
 #include "Event.h"
 #include "Game.h"
 #include "MasterClock.h"
