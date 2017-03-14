@@ -117,24 +117,34 @@ Event build(string estring, vector<Person>& peeps) {
 	}
 	if (buff != "") v.push_back(buff);
 
-	day_num = stoi(v[2], nullptr, 10);
+	day_num = stoi(v[3], nullptr, 10);
 	int i = 0;
 	while (day_num > 0) {
-		DateAndTime dt(stoi(v[3+i],nullptr,10),stoi(v[4+i],nullptr,10));
+		DateAndTime dt(stoi(v[4+i],nullptr,10),stoi(v[5+i],nullptr,10));
 		dts.insert(dts.end(), dt);
 		i += 2;
 		--day_num;
 	}
 
-	Event vent(v[0], v[1], dts);
+	Event vent(v[1], v[2], dts);
 	
-	for (int i = 0; i < peeps.size(); ++i){
-		for (auto s : v) {
-			if (s == peeps[i].getName()) {
-				peeps[i].addEvent(vent);
-				cout << "adding event" << endl;
+	if (v[0] == "e") {
+		for (int i = 0; i < peeps.size(); ++i) {
+			for (auto s : v) {
+				if (s == peeps[i].getName()) 
+					peeps[i].addEvent(vent);
 			}
 		}
 	}
+	else if (v[0] == "c") {
+
+	}
+	else if (v[0] == "g") {
+
+	}
+	else {
+
+	}
+
 	return vent;
 }
